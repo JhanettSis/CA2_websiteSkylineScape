@@ -1,0 +1,479 @@
+<!-- This line declares the document type as HTML. 
+ It's important for browsers to understand how to render the code. -->
+<!DOCTYPE html>
+<!--This line opens the HTML element and specifies the 
+	language of the content as English.-->
+<html lang="en">
+<!-- This tag marks the beginning of the document's head section. 
+	This section contains information about the document that isn't directly displayed 
+	on the webpage itself. -->
+	<head>
+	<!--  This line defines the character encoding of the 
+	document as UTF-8. This allows the webpage to display characters from various languages correctly.-->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- This line defines the title of the webpage as "Skyline Escapes". 
+		The title appears on the browser tab and is important for SEO. -->
+		<title>Skyline Escapes</title>
+
+		<!-- This line links to the favicon, which is the small icon displayed on the browser tab. 
+			It helps to visually identify the webpage. -->
+		<link href="img/favicon.ico" rel="icon">
+
+		<!-- This line includes the Font Awesome library, which provides access to various icons. 
+			The stylesheet is loaded from an external CDN (Content Delivery Network). -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+		<!-- This line links to an external CSS file (style.css) that defines the 
+			appearance and layout of the webpage. The file is located in the 'css' directory. -->
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+
+<!--This tag marks start of the body section of the HTML document. 
+All the visible content of the webpage should be placed between the opening 
+<body> and this closing </body> tag.-->
+<body>
+<!-- Menu Start -->
+ <!-- This is the main container for the navigation menu, 
+         positioned relative to the rest of the content with a z-index to control 
+         the stacking order. -->
+<nav class="wrapper position-relative mt-n1" style="z-index: 9;">
+    <div class="menu">
+        <!-- This is the logo area with a link to the homepage. 
+             When clicked, it redirects the user to "index.html". -->
+        <a href="index.html">
+            <!-- The website title is "SkylineEscapes", styled with a primary color for "Escapes" 
+                 and a darker shade for "Skyline". The margin-left (ml-3) class adds spacing on the left. -->
+            <h1 class="ml-3 text-primary"><span class="text-dark">Skyline</span>Escapes</h1>
+        </a>
+
+        <!-- This div contains the menu items, styled with padding (p-2). -->
+        <div class="menu-body p-2">
+            <!-- This is the first menu link, active by default, which takes the user to the homepage. -->
+            <a href="index.html" class="menu-text active">Home</a>
+
+            <!-- This link redirects to the "About" page. -->
+            <a href="about.html" class="menu-text">About</a>
+
+            <!-- Submenu section starts here, with a toggle to reveal additional pages. 
+                 The submenu is controlled using data-toggle functionality. -->
+            <div class="menu-text submenu">
+                <!-- When clicked, this toggles the display of the submenu items. 
+                     The arrow (&#9660;) indicates a dropdown. -->
+                <a href="#" class="menu-text submenu-toggle" data-toggle="submenu">Pages Services &#9660;</a>
+
+                <!-- Submenu content starts here. Initially hidden, this section reveals when the user clicks the toggle. -->
+                <div class="submenu-body">
+                    <!-- First submenu item that links to the Services page. 
+                         The arrow (&#9654;) indicates a sub-item. -->
+                    <a href="service.html" class="submenu-item"> &#9654; Services</a>
+
+                    <!-- Second submenu item that links to a blog detail page. -->
+                    <a href="newssite.html" class="submenu-item"> &#9654; News Site</a>
+                </div>
+            </div>
+
+            <!-- This link redirects to the contact page. -->
+            <a href="contact.html" class="menu-text">Contact</a>
+        </div>
+    </div>
+</nav>
+<!-- Menu End -->
+
+
+
+  <!-- Carousel Start -->
+  <section class="w-100 mt-n2 position-relative">
+    <!-- This container is a full-width carousel (w-100) with a slight negative top margin (mt-n2) 
+         and a relative position, allowing its child elements to be positioned absolutely. -->
+
+    <!-- First carousel item, set as active (displayed first by default). -->
+    <div class="carousel-item active">
+        <!-- Image for the first carousel slide. The 'alt' attribute provides a text description 
+             for accessibility and in case the image fails to load. -->
+        <img src="img/carousel-1.jpg" alt="Image Caroucel photo country Spain">
+
+        <!-- Caption container that overlays the carousel image. It contains text and a button. -->
+        <div class="carousel-caption">
+            <!-- Uppercase heading with a margin at the bottom (mb-3). It describes the company's expertise. -->
+            <h4 class="text-uppercase mb-3">Trusted Experts in Guided Tours & River</h4>
+
+            <!-- Second heading, styled with a custom font style and a margin at the bottom (mb-3). 
+                 It gives more details about the tours being offered. -->
+            <h3 class="font-style mb-3">We’ve compiled a list of the most beautiful places in Ireland</h3>
+
+            <!-- Button linking to an external website for reference, opening in a new tab (target="_blank"). -->
+            <a class="btn button1" target="_blank" href="https://www.getours.com/tours/easy-pace-spain-small-group">Image reference from website</a>
+        </div>
+    </div>
+
+    <!-- Second carousel item. Similar structure as the first but with different content. -->
+    <div class="carousel-item">
+        <!-- Image for the second carousel slide. -->
+        <img src="img/carousel-2.jpg" alt="Image Caroucel photo Europe">
+        
+        <div class="carousel-caption">
+            <!-- Uppercase heading for the second slide with a margin at the bottom (mb-3). -->
+            <h4 class="text-uppercase mb-3">Trusted Experts in Guided Tours & River</h4>
+
+            <!-- Second heading with a custom font style and a slightly larger bottom margin (mb-4). -->
+            <h3 class="font-style mb-4">Exceptional Service, Unbeatable Selection, Exclusive Savings</h3>
+
+            <!-- Button linking to another external reference page, also opening in a new tab. -->
+            <a class="btn button1" target="_blank" href="https://www.getours.com/tours/glimpse-of-europe">Image reference from website</a>
+        </div>
+    </div>
+
+    <!-- Carousel control buttons for navigating between slides. -->
+    <!-- "Prev" button to move to the previous slide. The button is styled with a top margin adjustment (mb-n2). -->
+    <a class="carousel-control-prev" id="prevBtn">
+        <span class="mb-n2">Prev</span>
+    </a>
+
+    <!-- "Next" button to move to the next slide. Also styled with a negative top margin. -->
+    <a class="carousel-control-next" id="nextBtn">
+        <span class="mb-n2">Next</span>
+    </a>
+  </section>
+
+	<!-- Carousel End -->
+
+	<!-- Filter form Start -->
+	<!-- Full-width (w-100) container with padding (p-4) for the filter section. 
+     This section allows users to filter and submit filter requests. -->
+<section class="w-100 filter-section p-4">
+
+    <!-- White background with a shadow effect to create depth for the form container. -->
+    <div class="bg-white shadow">
+
+        <!-- Form element structured in rows to organize the inputs in a grid-like fashion. -->
+        <form class="row">
+
+            <!-- First column (column-3), typically taking up one-third of the row. 
+                 This label introduces the filtering functionality. -->
+            <div class="column-3">
+                <label for="">Filter packets Select:</label>
+            </div>
+
+            <!-- Second column for the destination dropdown selection. -->
+            <div class="column-3">
+                <label for="">Destination:</label>
+
+                <!-- Dropdown for users to select a destination. 
+                     The "form-style" class applies custom styles. -->
+                <select class="form-style">
+                    <!-- The first option is disabled and selected by default, serving as a placeholder. -->
+                    <option selected disabled>Destination</option>
+                    <option value="1">Destination 1</option>
+                    <option value="2">Destination 2</option>
+                    <option value="3">Destination 3</option>
+                </select>
+            </div>
+
+            <!-- Third column for selecting the amount of people. -->
+            <div class="column-3">
+                <label for="">Amount of people:</label> 
+
+                <!-- A simple number input field with buttons to increase or decrease the value. 
+                     The 'minus()' and 'plus()' functions are used to control the value. -->
+                <div class="people-input">
+                    <button type="button" id="minusBtn" style="font-size: 20px;">-</button>
+                    <input id="counter" type="number" value="0">
+                    <button type="button" id="plusBtn">+</button>
+                </div>
+            </div>
+
+            <!-- Fourth column containing the submit button for the form. 
+                 Button styled with 'button1' class and set to take full width (w-100) of its column. -->
+            <div class="column-3">
+                <button class="btn button1 w-100" type="submit">Submit</button>
+            </div>
+            
+        </form>
+    </div>
+</section>
+	<!-- Filter form End -->
+
+  	
+
+<!-- Packages Start -->
+<!-- Full-width container with padding for the packages section. -->
+<section class="w-100 p-4">
+    <!-- Centered container for the section heading. -->
+    <div class="text-center">
+        <!-- Subheading indicating the category of packages offered. -->
+        <h6 class="text-primary text-uppercase">Packages</h6>
+        <!-- Main heading for the packages section, inviting users to select tour packages. -->
+        <h1>Select Tour Packages</h1>
+    </div>
+    <!-- Row to hold multiple package items. -->
+    <div class="row">
+        <!-- First package item container, occupying one-third of the width (column-4). -->
+        <div class="column-4">
+            <div class="bg-white action-hover p-2">
+                <!-- Location icon and package title. -->
+                <p><i class="fa fa-map-marker-alt text-primary"></i> Treasures of Italy</p>
+                <!-- Duration of the package. -->
+                <p><i class="fa fa-calendar-alt text-primary"></i> 3 days</p>
+                <!-- Number of persons the package is designed for. -->
+                <p><i class="fa fa-user text-primary"></i> 2 Person</p>
+                <!-- Image representing the package. -->
+                <img src="img/package-1.jpg" alt="Treasures of Italy">
+                <!-- Price and rating section, displayed in a flex container. -->
+                <div class="d-flex justify-content-between">
+                    <p class="font-weight"><i class="fa fa-star text-primary"></i> 4.5 (250)</p>
+                    <p class="font-weight">$350</p>
+                </div>
+                <!-- Additional information about the package with a link. -->
+                <div class="border-top pb-2">
+                    <a class="text-dark" target="_blank" href="https://www.getours.com/tours/treasures-of-italy">
+                        Reference of image click here:</a>
+                    <p>These Europe package tours and trips explore any of the continent’s 50 countries.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Second package item container, occupying one-third of the width (column-4). -->
+        <div class="column-4">
+            <div class="bg-white action-hover p-2">
+                <p><i class="fa fa-map-marker-alt text-primary"></i> Romantic Britain and Ireland</p>
+                <p><i class="fa fa-calendar-alt text-primary"></i> 3 days</p>
+                <p><i class="fa fa-user text-primary"></i> 2 Person</p>
+                <img src="img/package-2.jpg" alt="Romantic Britain and Ireland">
+                <div class="d-flex justify-content-between">
+                    <p class="font-weight"><i class="fa fa-star text-primary"></i> 4.5 (250)</p>
+                    <p class="font-weight">$350</p>
+                </div>
+                <div class="border-top pb-2">
+                    <a class="text-dark" target="_blank" href="https://www.getours.com/tours/romantic-britain-ireland">
+                        Reference of image click here:</a>
+                    <p>These Europe package tours and trips explore any of the continent’s 50 countries.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Third package item container, occupying one-third of the width (column-4). -->
+        <div class="column-4">
+            <div class="bg-white action-hover p-2">
+                <p><i class="fa fa-map-marker-alt text-primary"></i> Roads of Bavaria, Switzerland</p>
+                <p><i class="fa fa-calendar-alt text-primary"></i> 3 days</p>
+                <p><i class="fa fa-user text-primary"></i> 2 Person</p>
+                <img src="img/package-3.jpg" alt="Roads of Bavaria, Switzerland">
+                <div class="d-flex justify-content-between">
+                    <p class="font-weight"><i class="fa fa-star text-primary"></i> 4.5 (250)</p>
+                    <p class="font-weight">$350</p>
+                </div>
+                <div class="border-top pb-2">
+                    <a class="text-dark" target="_blank" href="https://www.getours.com/tours/country-roads-of-bavaria-switzerland-austria">
+                        Reference of image click here:</a>
+                    <p>These Europe package tours and trips explore any of the continent’s 50 countries.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Fourth package item container, occupying one-third of the width (column-4). -->
+        <div class="column-4">
+            <div class="bg-white action-hover p-2">
+                <p><i class="fa fa-map-marker-alt text-primary"></i> Country Roads of Portugal - Women Only</p>
+                <p><i class="fa fa-calendar-alt text-primary"></i> 3 days</p>
+                <p><i class="fa fa-user text-primary"></i> 2 Person</p>
+                <img src="img/package-4.jpg" alt="Country Roads of Portugal - Women Only">
+                <div class="d-flex justify-content-between">
+                    <p class="font-weight"><i class="fa fa-star text-primary"></i> 4.5 (250)</p>
+                    <p class="font-weight">$350</p>
+                </div>
+                <div class="border-top pb-2">
+                    <a class="text-dark" target="_blank" href="https://www.getours.com/tours/country-roads-of-portugal-women-only">
+                        Reference of image click here:</a>
+                    <p>These Europe package tours and trips explore any of the continent’s 50 countries.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Fifth package item container, occupying one-third of the width (column-4). -->
+        <div class="column-4">
+            <div class="bg-white action-hover p-2">
+                <p><i class="fa fa-map-marker-alt text-primary"></i> Country Roads of Scotland</p>
+                <p><i class="fa fa-calendar-alt text-primary"></i> 3 days</p>
+                <p><i class="fa fa-user text-primary"></i> 2 Person</p>
+                <img src="img/package-5.jpg" alt="Country Roads of Scotland">
+                <div class="d-flex justify-content-between">
+                    <p class="font-weight"><i class="fa fa-star text-primary"></i> 4.5 (250)</p>
+                    <p class="font-weight">$350</p>
+                </div>
+                <div class="border-top pb-2">
+                    <a class="text-dark" target="_blank" href="https://www.getours.com/tours/country-roads-of-scotland">
+                        Reference of image click here:</a>
+                    <p>These Europe package tours and trips explore any of the continent’s 50 countries.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Sixth package item container, occupying one-third of the width (column-4). -->
+        <div class="column-4">
+            <div class="bg-white action-hover p-2">
+                <p><i class="fa fa-map-marker-alt text-primary"></i> Greek Island Hopper</p>
+                <p><i class="fa fa-calendar-alt text-primary"></i> 3 days</p>
+                <p><i class="fa fa-user text-primary"></i> 2 Person</p>
+                <img src="img/package-6.jpg" alt="Greek Island Hopper">
+                <div class="d-flex justify-content-between">
+                    <p class="font-weight"><i class="fa fa-star text-primary"></i> 4.5 (250)</p>
+                    <p class="font-weight">$350</p>
+                </div>
+                <div class="border-top pb-2">
+                    <a class="text-dark" target="_blank" href="https://www.getours.com/tours/greek-island-hopper">
+                        Reference of image click here:</a>
+                    <p>These Europe package tours and trips explore any of the continent’s 50 countries.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Packages End -->
+	 
+
+
+	
+
+
+	<!-- Registration Start -->
+<!-- This container serves as the full-width section (w-100) with padding and a background image for the registration area. -->
+<section class="w-100 p-1 bg-img-registration">
+    <!-- Row to hold the offer details and sign-up form, with padding and white text color. -->
+    <div class="row p-4 text-white">
+        <!-- Offer Details Section -->
+        <!-- Column for the offer details, occupying two-thirds of the width (column-7). -->
+        <div class="column-7">
+            <!-- Subheading for the offer, styled in uppercase and with a primary color. -->
+            <h6 class="text-primary text-uppercase">Mega Offer</h6>
+            <!-- Main heading for the offer, highlighting the discount. -->
+            <h1>
+                <span class="text-primary">30% OFF</span> Romantic Britain and Ireland
+            </h1>
+            <!-- Paragraph describing the offer. -->
+            <p>
+                Enjoy an unforgettable experience! Special discount for The journey through the Ring of Kerry boasts breathtaking views of mountains fading into the distant sea and after a stop at the famous kissing stone in Blarney Castle, Local Experts add some extra sparkle with a personal tour through the House of Waterford Crystal.
+            </p>
+            <!-- Unordered list of offer details. -->
+            <ul>
+                <!-- List items detailing the benefits of the offer. -->
+                <li class="pb-2">Exclusive honeymoon destinations</li>
+                <li class="pb-2">All-inclusive packages</li>
+                <li class="pb-2">Customizable itineraries</li>
+            </ul>
+        </div>
+
+        <!-- Sign Up Form Section -->
+        <!-- Column for the sign-up form, occupying one-third of the width (column-5). -->
+        <div class="column-5">
+            <!-- Container for the form with padding and a white background. -->
+            <div class="p-3 bg-white">
+                <img src="img/package-2.jpg" alt="Image of Europe country">
+				<h3 class="text-dark">Romantic Britain and Ireland</h3>
+				<a target="_blank" href="https://www.getours.com/tours/romantic-britain-ireland">Image reference click here</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Registration End -->
+
+  
+	
+
+	
+
+ 
+	 <!-- Service Start -->
+<!-- This container serves as the full-width section (w-100) with padding for the services area. -->
+<section class="w-100 p-4">
+    <!-- Centered container for the section heading with bottom padding. -->
+    <div class="text-center pb-3">
+        <!-- Subheading indicating the category of services offered. -->
+        <h6 class="text-primary text-uppercase">Services</h6>
+        <!-- Main heading for the services section, outlining plans and prices. -->
+        <h1>Plans and prices Travel</h1>
+    </div>
+    <!-- Row to hold multiple service items. -->
+    <div class="row">
+        <!-- First service item container, occupying one-third of the width (column-4). -->
+        <div class="column-6">
+            <!-- Service item with a white background, centered text, and padding. -->
+            <div class="bg-white text-center p-3 plans-styles">
+                <!-- Icon representing the service type (Travel Hotel). -->
+                <i class="fa fa-2x fa-hotel"></i>
+                <!-- Service title. -->
+                <h5>Hotel Booking</h5>
+                <!-- Description of the service offered. -->
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+        <!-- Second service item container, occupying one-third of the width (column-4). -->
+        <div class="column-6">
+            <div class="bg-white text-center p-3 plans-styles">
+                <i class="fa fa-2x fa-ticket-alt"></i>
+                <h5>Ticket Booking</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Service End -->
+
+
+	
+
+
+
+	<!-- Footer Start -->
+<footer class="w-100 bg-dark text-white p-1">
+    <div class="row">
+        <!-- First column for branding and social media links. -->
+        <div class="column-4">
+            <a href="">
+                <!-- Brand name with primary color for emphasis. -->
+                <h1 class="text-primary"><span class="text-white">TRAVEL</span>ER</h1>
+            </a>
+            <p>
+                When you choose Grand European Travel, you gain access to the world's 
+                top guided travel experiences and the best team to help you plan an unforgettable 
+                adventure.
+            </p>
+            <h6 class="text-white text-uppercase">Follow Us</h6>
+            <div class="d-flex">
+                <!-- Social media links with icons. -->
+                <a class="btn button2" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn button2" href="#"><i class="fab fa-instagram"></i></a>
+                <a class="btn button2" href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <!-- Second column for navigation links to services. -->
+        <div class="column-4">
+            <h5 class="text-white">Our Services</h5>
+            <div class="d-flex flex-column justify-content-start">
+                <a class="active-footer" href="index.html">&#9654; Home</a>
+				<a class="text-white" href="about.html">&#9654; About</a>
+                <a class="text-white" href="service.html">&#9654; Services</a>
+                <a class="text-white" href="newssite.html">&#9654; News Site</a>
+            </div>
+        </div>
+        <!-- Third column for contact information. -->
+        <div class="column-4">
+			<h5 class="text-white">Contact Us</h5>
+			<p><i class="fa fa-map-marker-alt"></i> 123 Street, Dublin, Ireland</p>
+			<p><i class="fa fa-phone-alt"></i> +353 123 123456</p>
+			<p><i class="fa fa-envelope"></i> info@example.com</p>
+			<a class="text-white" href="contact.html">&#9654; Contact Us</a>
+		</div>
+    </div>
+    <!-- Divider for visual separation from the copyright section. -->
+    <div class="border-top">
+        <p class="text-white text-center">
+            Copyright &copy; <a class="text-color-copy" href="#"> All Rights Reserved.</a>
+        </p>
+    </div>
+</footer>
+<!-- Footer End -->
+
+
+  <!-- This line links to an external JavaScript file named main.js located in a folder named js.
+   This script typically contains the interactive features and functionalities for the webpage, 
+   such as event listeners, animations, menu drop sub-menu JavaScript code that enhances user experience. -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

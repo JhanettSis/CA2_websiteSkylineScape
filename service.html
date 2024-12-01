@@ -1,0 +1,353 @@
+<!-- This line declares the document type as HTML. 
+It's important for browsers to understand how to render the code. -->
+<!DOCTYPE html>
+    <!--This line opens the HTML element and specifies the 
+    language of the content as English.-->
+    <html lang="en">
+        <!-- This tag marks the beginning of the document's head section. 
+        This section contains information about the document that isn't directly displayed 
+        on the webpage itself. -->
+        <head>
+        <!--  This line defines the character encoding of the 
+        document as UTF-8. This allows the webpage to display characters from various languages correctly.-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- This line defines the title of the webpage as "Skyline Escapes". 
+            The title appears on the browser tab and is important for SEO. -->
+            <title>Skyline Escapes</title>
+ 
+            <!-- This line links to the favicon, which is the small icon displayed on the browser tab. 
+            It helps to visually identify the webpage. -->
+            <link href="img/favicon.ico" rel="icon">
+ 
+            <!-- This line includes the Font Awesome library, which provides access to various icons. 
+            The stylesheet is loaded from an external CDN (Content Delivery Network). -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+ 
+            <!-- This line links to an external CSS file (style.css) that defines the 
+            appearance and layout of the webpage. The file is located in the 'css' directory. -->
+            <link href="css/style.css" rel="stylesheet">
+        </head>
+ 
+<!--This tag marks start of the body section of the HTML document. 
+All the visible content of the webpage should be placed between the opening 
+<body> and this closing </body> tag.-->
+<body>
+    <!-- Menu Start -->
+    <!-- This is the main container for the navigation menu, 
+    positioned relative to the rest of the content with a z-index to control the stacking order. -->
+    <div class="wrapper position-relative mt-n1" style="z-index: 9;">
+        <div class="menu">
+            <!-- This is the logo area with a link to the homepage. 
+            When clicked, it redirects the user to "index.html". -->
+            <a href="index.html">
+                <!-- The website title is "SkylineEscapes", styled with a primary color for "Escapes" 
+                and a darker shade for "Skyline". The margin-left (ml-3) class adds spacing on the left. -->
+                <h1 class="ml-3 text-primary"><span class="text-dark">Skyline</span>Escapes</h1>
+            </a>
+ 
+        <!-- This div contains the menu items, styled with padding (p-2). -->
+        <div class="menu-body p-2">
+            <!-- This is the first menu link, which takes the user to the homepage. -->
+            <a href="index.html" class="menu-text">Home</a>
+ 
+            <!-- This link redirects to the "About" page. -->
+            <a href="about.html" class="menu-text">About</a>
+ 
+            <!-- Submenu section starts here, with a toggle to reveal additional pages. 
+            The submenu is controlled using data-toggle functionality, active by default. -->
+            <div class="menu-text active submenu">
+                <!-- When clicked, this toggles the display of the submenu items. 
+                    The arrow (&#9660;) indicates a dropdown. -->
+                <a href="#" class="menu-text submenu-toggle" data-toggle="submenu">Pages Services &#9660;</a>
+ 
+                <!-- Submenu content starts here. Initially hidden, this section reveals when the user clicks the toggle. -->
+                <div class="submenu-body">
+                    <!-- First submenu item that links to the Services page. 
+                        The arrow (&#9654;) indicates a sub-item, 
+                     for this page the sub-menu is actived -->
+                    <a href="service.html" class="submenu-item active"> &#9654; Services</a>
+
+                    <!-- Second submenu item that links to a blog detail page. -->
+                    <a href="newssite.html" class="submenu-item"> &#9654; News Site</a>
+                </div>
+            </div>
+ 
+            <!-- This link redirects to the contact page. -->
+            <a href="contact.html" class="menu-text">Contact</a>
+        </div>
+    </div>
+</div>
+<!-- Menu End -->
+
+        <!-- Header Start -->
+        <div class="w-100 page-header mt-n2 position-relative">
+            <!-- Flex container to center content vertically and horizontally -->
+            <div class="page-header-text" style="min-height: 400px">
+                <!-- Main heading for the About page -->
+                <h3 class="page-header-text-style">All our services here</h3>
+                <div class="d-inline-flex">
+                    <!-- Navigation links to Home and current page and to consider adding additional styles 
+                     for better visual, I separated using space after the word Home with the following code &nbsp; .-->
+                    <p class="m-0 text-uppercase"><a class="text-white" href="index.html">  &#9654; Home  &nbsp;&nbsp;</a></p>
+                    <!-- Current page label and the HTML entity &#9654; represents a right-pointing triangle symbol (▶). -->
+                    <p class="m-0 text-uppercase"> &#9654; Services of packets</p>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+
+
+
+
+
+
+
+        <!-- Destination Start -->
+        <!-- This container is a full-width section (w-100) with padding (p-4) for displaying destinations. -->
+        <div class="w-100 p-4">
+
+            <!-- Centered text section for the heading and subtitle of the destination area. -->
+            <div class="text-center">
+                <!-- Primary heading styled with a primary color and uppercase text. -->
+                <h6 class="text-primary text-uppercase">Destination</h6>
+                <!-- Main title for the section, introducing the destination content. -->
+                <h1>Explore Top Destination</h1>
+            </div>
+
+            <!-- Row container for destination items, structured in a grid layout. -->
+            <div class="row">
+
+                <!-- First destination item in a column, taking up one-third of the row (column-4). -->
+                <div class="column-4">
+                    <!-- This div wraps the destination item, allowing for positioning and overflow control. -->
+                    <div class="destination-item position-relative overflow-hidden">
+                        <!-- Image representing the destination. Alt text is = Welcome to Grand European Travelfor decorative images. -->
+                        <img src="img/destination-1.jpg" alt="Welcome to Grand European Travel">
+                        <!-- Overlay link with destination details, opens in a new tab when clicked. -->
+                        <a class="destination-overlay text-white" target="_blank" href="https://www.cntraveler.com/galleries/2016-03-15/the-most-beautiful-places-in-ireland">
+                            <!-- Destination name displayed prominently. -->
+                            <h5>Cliffs of Moher</h5>
+                            <!-- Location information for the destination. -->
+                            <p>Location: County Clare</p>
+                            <!-- Credit for the image source. -->
+                            <p>Image reference: mikroman6/Getty</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Second destination item in a column (column-4). -->
+                <div class="column-4">
+                    <div class="destination-item position-relative overflow-hidden">
+                        <img src="img/destination-2.jpg" alt="Welcome to Grand European Travel">
+                        <a class="destination-overlay text-white" target="_blank" href="https://www.cntraveler.com/galleries/2016-03-15/the-most-beautiful-places-in-ireland">
+                            <h5>Trinity College</h5>
+                            <p>Location: County Dublin</p>
+                            <p>Image reference: Jonathan Singer/Unsplash</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Third destination item in a column (column-4). -->
+                <div class="column-4">
+                    <div class="destination-item position-relative overflow-hidden">
+                        <img src="img/destination-3.jpg" alt="Welcome to Grand European Travel">
+                        <a class="destination-overlay text-white" target="_blank" href="https://www.cntraveler.com/galleries/2016-03-15/the-most-beautiful-places-in-ireland">
+                            <h5>The Ring of Kerry</h5>
+                            <p>Location: County Kerry</p>
+                            <p>Image reference: Dawid Kalisinski Photography/Getty</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Fourth destination item in a column (column-4). -->
+                <div class="column-4">
+                    <div class="destination-item position-relative overflow-hidden">
+                        <img src="img/destination-4.jpg" alt="Welcome to Grand European Travel">
+                        <a class="destination-overlay text-white" target="_blank" href="https://www.cntraveler.com/galleries/2016-03-15/the-most-beautiful-places-in-ireland">
+                            <h5>Benbulben Mountain</h5>
+                            <p>Location: County Sligo</p>
+                            <p>Image reference: Andrew Michael/UIG/Getty</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Fifth destination item in a column (column-4). -->
+                <div class="column-4">
+                    <div class="destination-item position-relative overflow-hidden">
+                        <img src="img/destination-5.jpg" alt="Welcome to Grand European Travel">
+                        <a class="destination-overlay text-white" target="_blank" href="https://www.cntraveler.com/galleries/2016-03-15/the-most-beautiful-places-in-ireland">
+                            <h5>Galway</h5>
+                            <p>Location: County Galway</p>
+                            <p>Image reference: Jon Arnold Images Ltd/Getty</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sixth destination item in a column (column-4). -->
+                <div class="column-4">
+                    <div class="destination-item position-relative overflow-hidden">
+                        <img src="img/destination-6.jpg" alt="Welcome to Grand European Travel">
+                        <a class="destination-overlay text-white" target="_blank" href="https://www.cntraveler.com/galleries/2016-03-15/the-most-beautiful-places-in-ireland">
+                            <h5>Killarney National Park</h5>
+                            <p>Location: County Kerry</p>
+                            <p>Image reference: AlbertMi/Getty</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Destination End -->
+
+
+        
+
+
+
+        <!-- Testimonials Section -->
+        <div id="testimonials">
+            <!-- Section Title -->
+            <h2>What Our Customers Are Saying</h2>
+
+            <!-- Container for all testimonials -->
+            <div class="testimonial-container">
+                <!-- Testimonial 1 -->
+                <div class="testimonial">
+                    <!-- Customer Photo -->
+                    <div class="customer-photo">
+                        <!-- Image of the customer -->
+                        <img src="img/team-1.jpg" alt="Customer 1 Photo">
+                    </div>
+                    <!-- Testimonial Text and Details -->
+                    <div class="testimonial-content">
+                        <!-- Testimonial Quote -->
+                        <p>"SkylineEscapes made our trip to Bali unforgettable! The booking process was seamless, and everything was taken care of. We had an amazing experience."</p>
+                        <!-- Customer Name and Location -->
+                        <h4>John Doe, Sydney, Australia</h4>
+                        <!-- Star Rating (5 stars) -->
+                        <div class="rating">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial">
+                    <!-- Customer Photo -->
+                    <div class="customer-photo">
+                        <!-- Image of the customer -->
+                        <img src="img/team-2.jpg" alt="Customer 2 Photo">
+                    </div>
+                    <!-- Testimonial Text and Details -->
+                    <div class="testimonial-content">
+                        <!-- Testimonial Quote -->
+                        <p>"I can't recommend SkylineEscapes enough! The team customized our Europe tour, and we were blown away by their attention to detail."</p>
+                        <!-- Customer Name and Location -->
+                        <h4>Jane M., New York, USA</h4>
+                        <!-- Star Rating (5 stars) -->
+                        <div class="rating">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial">
+                    <!-- Customer Photo -->
+                    <div class="customer-photo">
+                        <!-- Image of the customer -->
+                        <img src="img/team-3.jpg" alt="Customer 3 Photo">
+                    </div>
+                    <!-- Testimonial Text and Details -->
+                    <div class="testimonial-content">
+                        <!-- Testimonial Quote -->
+                        <p>"The entire experience was wonderful! SkylineEscapes took care of every detail for our dream trip to Japan."</p>
+                        <!-- Customer Name and Location -->
+                        <h4>Emma W., London, UK</h4>
+                        <!-- Star Rating (5 stars) -->
+                        <div class="rating">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation buttons for testimonials -->
+            <div class="testimonial-navigation">
+                <!-- Button to go to the previous testimonial -->
+                <button id="prev-btn">← Previous</button>
+                <!-- Button to go to the next testimonial -->
+                <button id="next-btn">Next →</button>
+            </div>
+        </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+    <div class="w-100 bg-dark text-white p-1">
+        <div class="row">
+            <!-- First column for branding and social media links. -->
+            <div class="column-4">
+                <a href="">
+                    <!-- Brand name with primary color for emphasis. -->
+                    <h1 class="text-primary"><span class="text-white">TRAVEL</span>ER</h1>
+                </a>
+                <p>
+                    When you choose Grand European Travel, you gain access to the world's 
+                    top guided travel experiences and the best team to help you plan an unforgettable 
+                    adventure.
+                </p>
+                <h6 class="text-white text-uppercase">Follow Us</h6>
+                <div class="d-flex">
+                    <!-- Social media links with icons. -->
+                    <a class="btn button2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn button2" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn button2" href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <!-- Second column for navigation links to services. -->
+            <div class="column-4">
+                <h5 class="text-white">Our Services</h5>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white" href="index.html">&#9654; Home</a>
+					<a class="text-white" href="about.html">&#9654; About</a>
+					<a class="active-footer" href="service.html">&#9654; Services</a>
+					<a class="text-white" href="newssite.html">&#9654; News Site</a>
+                </div>
+            </div>
+            <!-- Third column for contact information. -->
+            <div class="column-4">
+                <h5 class="text-white">Contact Us</h5>
+                <p><i class="fa fa-map-marker-alt"></i> 123 Street, Dublin, Ireland</p>
+                <p><i class="fa fa-phone-alt"></i> +353 123 123456</p>
+                <p><i class="fa fa-envelope"></i> info@example.com</p>
+                <a class="text-white" href="contact.html">&#9654; Contact Us</a>
+            </div>
+        </div>
+        <!-- Divider for visual separation from the copyright section. -->
+        <div class="border-top">
+            <p class="text-white text-center">
+                Copyright &copy; <a class="text-color-copy" href="#"> All Rights Reserved.</a>
+            </p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- This line links to an external JavaScript file named main.js located in a folder named js.
+    This script typically contains the interactive features and functionalities for the webpage, 
+    such as event listeners, animations, menu drop sub-menu JavaScript code that enhances user experience. -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

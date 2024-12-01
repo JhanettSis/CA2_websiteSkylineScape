@@ -1,0 +1,241 @@
+<!-- This line declares the document type as HTML. 
+It's important for browsers to understand how to render the code. -->
+<!DOCTYPE html>
+    <!--This line opens the HTML element and specifies the 
+    language of the content as English.-->
+    <html lang="en">
+        <!-- This tag marks the beginning of the document's head section. 
+        This section contains information about the document that isn't directly displayed 
+        on the webpage itself. -->
+        <head>
+        <!--  This line defines the character encoding of the 
+        document as UTF-8. This allows the webpage to display characters from various languages correctly.-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- This line defines the title of the webpage as "Skyline Escapes". 
+            The title appears on the browser tab and is important for SEO. -->
+            <title>Skyline Escapes</title>
+ 
+            <!-- This line links to the favicon, which is the small icon displayed on the browser tab. 
+            It helps to visually identify the webpage. -->
+            <link href="img/favicon.ico" rel="icon">
+ 
+            <!-- This line includes the Font Awesome library, which provides access to various icons. 
+            The stylesheet is loaded from an external CDN (Content Delivery Network). -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+ 
+            <!-- This line links to an external CSS file (style.css) that defines the 
+            appearance and layout of the webpage. The file is located in the 'css' directory. -->
+            <link href="css/style.css" rel="stylesheet">
+        </head>
+ 
+<!--This tag marks start of the body section of the HTML document. 
+All the visible content of the webpage should be placed between the opening 
+<body> and this closing </body> tag.-->
+<body>
+    <!-- Menu Start -->
+    <!-- This is the main container for the navigation menu, 
+    positioned relative to the rest of the content with a z-index to control the stacking order. -->
+    <div class="wrapper position-relative mt-n1" style="z-index: 9;">
+        <div class="menu">
+            <!-- This is the logo area with a link to the homepage. 
+            When clicked, it redirects the user to "index.html". -->
+            <a href="index.html">
+                <!-- The website title is "SkylineEscapes", styled with a primary color for "Escapes" 
+                and a darker shade for "Skyline". The margin-left (ml-3) class adds spacing on the left. -->
+                <h1 class="ml-3 text-primary"><span class="text-dark">Skyline</span>Escapes</h1>
+            </a>
+ 
+        <!-- This div contains the menu items, styled with padding (p-2). -->
+        <div class="menu-body p-2">
+            <!-- This is the first menu link, which takes the user 
+             to the homepage. -->
+            <a href="index.html" class="menu-text">Home</a>
+ 
+            <!-- This link redirects to the "About" page. -->
+            <a href="about.html" class="menu-text">About</a>
+ 
+            <!-- Submenu section starts here, with a toggle to reveal additional pages. 
+            The submenu is controlled using data-toggle functionality, active by default. -->
+            <div class="menu-text active submenu">
+                <!-- When clicked, this toggles the display of the submenu items. 
+                    The arrow (&#9660;) indicates a dropdown. -->
+                <a href="#" class="menu-text submenu-toggle" data-toggle="submenu">Pages Services &#9660;</a>
+ 
+                <!-- Submenu content starts here. Initially hidden, this section reveals when the user clicks the toggle. -->
+                <div class="submenu-body">
+                    <!-- First submenu item that links to the Services page. 
+                        The arrow (&#9654;) indicates a sub-item. -->
+                    <a href="service.html" class="submenu-item"> &#9654; Services</a>
+
+                    <!-- Second submenu item that links to a New sites detail page, 
+                     for this page the sub-menu is actived -->
+                    <a href="newssite.html" class="submenu-item active"> &#9654; News Site</a>
+                </div>
+            </div>
+ 
+            <!-- This link redirects to the contact page. -->
+            <a href="contact.html" class="menu-text">Contact</a>
+        </div>
+    </div>
+</div>
+<!-- Menu End -->
+
+        <!-- Header Start -->
+        <div class="w-100 page-header mt-n2 position-relative">
+            <!-- Flex container to center content vertically and horizontally -->
+            <div class="page-header-text" style="min-height: 400px">
+                <!-- Main heading for the About page -->
+                <h3 class="page-header-text-style">News</h3>
+                <div class="d-inline-flex">
+                    <!-- Navigation links to Home and current page and to consider adding additional styles 
+                     for better visual, I separated using space after the word Home with the following code &nbsp; .-->
+                    <p class="m-0 text-uppercase"><a class="text-white" href="index.html">  &#9654; Home  &nbsp;&nbsp;</a></p>
+                    <!-- Current page label and the HTML entity &#9654; represents a right-pointing triangle symbol (▶). -->
+                    <p class="m-0 text-uppercase"> &#9654; News of packets</p>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+
+
+
+
+        <!-- New sites Start -->
+        <!-- This container serves as the full-width section (w-100) with padding for the New sites news area. -->
+        <div class="w-100 p-4">
+            <!-- Centered container for the New sites section heading, with padding. -->
+            <div class="text-center p-3">
+                <!-- Main heading for the New sites news section. -->
+                <h1>News sites</h1>
+            </div>
+            <!-- Row to hold multiple New sites items. -->
+            <div class="row">
+                <!-- First New sites item container, occupying one-third of the width (column-4). -->
+                <div class="column-4">
+                    <div class="blog-item">
+                        <!-- Relative positioned container for the New sites image and date. -->
+                        <div class="position-relative">
+                            <!-- Image for the New sites post. -->
+                            <img src="img/blog-1.jpg" alt="Welcome to Grand European Travel">
+                            <!-- New sites date container displaying the date of the post. -->
+                            <div class="blog-date">
+                                <!-- Day of the month for the New sites post. -->
+                                <h6 class="mb-n1">01</h6>
+                                <!-- Month for the New sites post. -->
+                                <h5>Jan</h5>
+                            </div>
+                        </div>
+                        <!-- Container for the New sites post content with a white background and padding. -->
+                        <div class="bg-white p-3">
+                            <!-- Link to the full New sites post, styled in primary color and centered. -->
+                            <a target="_blank"  href="https://pixabay.com/photos/urban-dublin-street-landmark-5272365/">
+                                Image reference click here </a>
+                            <p class="text-primary text-center text-uppercase">Urban, Dublin, Street image. </p>	
+                            <!-- Paragraph summarizing the New sites content. -->
+                            <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Second New sites item container, occupying one-third of the width (column-4). -->
+                <div class="column-4">
+                    <div class="blog-item">
+                        <div class="position-relative">
+                            <img src="img/blog-2.jpg" alt="Welcome to Grand European Travel">
+                            <div class="blog-date">
+                                <h6 class="mb-n1">01</h6>
+                                <h5>Jan</h5>
+                            </div>
+                        </div>
+                        <div class="bg-white p-3">
+                            <a target="_blank" href="https://pixabay.com/photos/ireland-dublin-temple-bar-pub-beer-4945565/">
+                                Image reference click here </a>
+                            <p class="text-primary text-center text-uppercase">Ireland, Dublin, Temple bar image. </p>
+                            <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Third New sites item container, occupying one-third of the width (column-4). -->
+                <div class="column-4">
+                    <div class="blog-item">
+                        <div class="position-relative">
+                            <img src="img/blog-3.jpg" alt="Welcome to Grand European Travel">
+                            <div class="blog-date">
+                                <h6 class="mb-n1">01</h6>
+                                <h5>Jan</h5>
+                            </div>
+                        </div>
+                        <div class="bg-white p-3">
+                            <a target="_blank" href="https://pixabay.com/photos/molly-malone-statue-attraction-2539750/">
+                                Image reference click here </a>
+                            <p class="text-primary text-center text-uppercase"> Molly malone, Statue, Attraction image. 
+                            </p>
+                            <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- New sites End -->
+
+
+
+
+    <!-- Footer Start -->
+    <div class="w-100 bg-dark text-white p-1">
+        <div class="row">
+            <!-- First column for branding and social media links. -->
+            <div class="column-4">
+                <a href="">
+                    <!-- Brand name with primary color for emphasis. -->
+                    <h1 class="text-primary"><span class="text-white">TRAVEL</span>ER</h1>
+                </a>
+                <p>
+                    When you choose Grand European Travel, you gain access to the world's 
+                    top guided travel experiences and the best team to help you plan an unforgettable 
+                    adventure.
+                </p>
+                <h6 class="text-white text-uppercase">Follow Us</h6>
+                <div class="d-flex">
+                    <!-- Social media links with icons. -->
+                    <a class="btn button2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn button2" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn button2" href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <!-- Second column for navigation links to services. -->
+            <div class="column-4">
+                <h5 class="text-white">Our Services</h5>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white" href="index.html">&#9654; Home</a>
+					<a class="text-white" href="about.html">&#9654; About</a>
+					<a class="text-white" href="service.html">&#9654; Services</a>
+					<a class="active-footer" href="newssite.html">&#9654; News Site</a>
+                </div>
+            </div>
+            <!-- Third column for contact information. -->
+            <div class="column-4">
+                <h5 class="text-white">Contact Us</h5>
+                <p><i class="fa fa-map-marker-alt"></i> 123 Street, Dublin, Ireland</p>
+                <p><i class="fa fa-phone-alt"></i> +353 123 123456</p>
+                <p><i class="fa fa-envelope"></i> info@example.com</p>
+                <a class="text-white" href="contact.html">&#9654; Contact Us</a>
+            </div>
+        </div>
+        <!-- Divider for visual separation from the copyright section. -->
+        <div class="border-top">
+            <p class="text-white text-center">
+                Copyright &copy; <a class="text-color-copy" href="#"> All Rights Reserved.</a>
+            </p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- This line links to an external JavaScript file named main.js located in a folder named js.
+    This script typically contains the interactive features and functionalities for the webpage, 
+    such as event listeners, animations, menu drop sub-menu JavaScript code that enhances user experience. -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1080 @@
+/* 
+For references about colors what to chose I visited those web page
+https://darklup.com/best-colors-for-color-blind-individuals/
+https://venngage.com/blog/color-blind-friendly-palette/#:~:text=Colorblind-friendly%20palettes%20usually%20use%20two%20main%20colors%20like,have%20little%20effect%20on%20how%20blue%20is%20perceived.
+https://michelf.ca/projects/ios/sim-daltonism/
+ 
+How TO - Four Column Layout
+references
+https://www.w3schools.com/howto/howto_css_four_columns.asp
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Controlling_ratios_of_flex_items_along_the_main_axis
+
+
+For CSS Shadow Effects
+https://www.w3schools.com/csS/css3_shadows.asp
+
+
+
+CSS Transitions
+https://www.w3schools.com/csS/css3_transitions.asp
+
+
+CSS background-blend-mode Property
+https://www.w3schools.com/cssref/pr_background-blend-mode.php
+
+
+The translate() CSS function repositions an element in the horizontal and/or vertical directions. 
+https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate
+
+
+CSS Text Shadow
+https://www.w3schools.com/css/css_text_shadow.asp
+
+
+CSS flex-direction Property
+https://www.w3schools.com/cssref/css3_pr_flex-direction.php
+
+
+CSS box-shadow Property
+https://www.w3schools.com/cssref/css3_pr_box-shadow.php
+
+
+Add stroke around text - on the outside - with css?
+https://stackoverflow.com/questions/26634201/add-stroke-around-text-on-the-outside-with-css
+
+Apply universal box-sizing rule to ensure padding and borders are 
+included in the element's total width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove default margin from the body element and 
+set basic styles for the whole document */
+body {
+  margin: 0;  /* Removes default margin around the body */
+  font-family: Verdana, Geneva, sans-serif;  /* Sets the font to Verdana (or fallback options if unavailable) */
+  font-weight: 400;  /* Sets the font weight to normal (400) */
+  color: #052955;  /* Sets the text color to a dark blue (#052955) */
+  line-height: 1.5;  /* Defines the space between lines of text */
+  background-color: #ecf0f1;  /* Sets the background color to a light grey (#ecf0f1) */
+}
+
+/* Remove top margin from paragraph (<p>) and unordered list (<ul>), and justify their text */
+p, ul {
+  margin-top: 0;  /* Eliminates the default top margin */
+  text-align: justify;  /* Aligns text so that both the left and right sides are flush */
+}
+
+/* Remove default underline from all anchor (<a>) elements */
+a { 
+  text-decoration: none;  /* Disables the default underline for links */
+}
+
+/* Make all images take up 100% of their container's width and ensure background images cover their container */
+img {
+  width: 100%;  /* Forces images to take up the full width of their container */
+  background-size: cover;  /* Ensures background images cover the entire container without distortion */
+}
+
+/* Ensure consistent styling for form elements (input, button, select, textarea) */
+input,
+button,
+select,
+textarea {
+  margin: 0;  /* Remove any default margins */
+  font-family: inherit;  /* Inherit the font family from parent elements */
+  font-size: inherit;  /* Inherit the font size from parent elements */
+  line-height: inherit;  /* Inherit the line height from parent elements */
+}
+
+/* Style for h1 heading and elements with class "h1" */
+h1, .h1 {
+  font-size: 2.8rem;  /* Set the font size to 2.8rem (responsive size based on root font size) */
+}
+
+/* Style for h2 heading and elements with class "h2" */
+h2, .h2 {
+  font-size: 2.2rem;  /* Set the font size to 2.2rem */
+}
+
+/* Style for h4 heading and elements with class "h4" */
+h4, .h4 {
+  font-size: 1.5rem;  /* Set the font size to 1.5rem */
+}
+
+/* Style for h5 heading and elements with class "h5" */
+h5, .h5 {
+  font-size: 1.35rem;  /* Set the font size to 1.35rem */
+}
+
+/* Style for h6 heading and elements with class "h6" */
+h6, .h6 {
+  font-size: 1rem;  /* Set the font size to 1rem */
+}
+
+/* Class to define a large font style */
+.font-style {
+  font-size: 4.5rem;  /* Set the font size to 4.5rem (very large text) */
+  font-weight: 300;  /* Set the font weight to light (300) */
+  line-height: 1.2;  /* Set line height to 1.2 for more compact vertical spacing */
+}
+
+/* Define layout properties for an element with class "wrapper" */
+.wrapper {
+  width: 100%;  /* Ensure the wrapper takes up 100% of the available width */
+  padding-right: 35px;  /* Add 35px padding to the right */
+  padding-left: 35px;  /* Add 35px padding to the left */
+}
+/* Define a flex container for rows, allowing flexible layout and wrapping */
+.row {
+  display: flex;  /* Sets the container as a flexbox to align child elements in a row */
+  flex-wrap: wrap;  /* Allows child elements to wrap onto the next line if they exceed the container's width */
+}
+
+/* Define basic styles for different column classes */
+.column-2, .column-3, .column-4, .column-5, .column-6,
+.column-7, .column-8, .column-12 {
+  position: relative;  /* Sets the position of the columns to relative (needed for positioning child elements) */
+  width: 100%;  /* Ensure the column takes up 100% of the available width by default */
+  padding: 1rem;  /* Adds 1rem padding to all sides of the columns */
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/* For desktop: */
+
+/* Column class for a 2/12 width (1/6 of the container) */
+.column-2 {
+  width: 16.66667%;  /* Set the maximum width to 16.66667% */
+}
+
+/* Column class for a 3/12 width (1/4 of the container) */
+.column-3 {
+  width: 25%;  /* Set the maximum width to 25% */
+}
+
+/* Column class for a 4/12 width (1/3 of the container) */
+.column-4 {
+  width: 33.33333%;  /* Set the maximum width to 33.33333% */
+}
+
+/* Column class for a 5/12 width (a little over 1/3 of the container) */
+.column-5 {
+  width: 41.66667%;  /* Set the maximum width to 41.66667% */
+}
+
+/* Column class for a 6/12 width (half of the container) */
+.column-6 {
+  width: 50%;  /* Set the maximum width to 50% */
+}
+
+/* Column class for a 7/12 width (a little over half of the container) */
+.column-7 {
+  width: 58.33333%;  /* Set the maximum width to 58.33333% */
+}
+
+/* Column class for a 8/12 width (2/3 of the container) */
+.column-8 {
+  width: 66.66667%;  /* Set the maximum width to 66.66667% */
+}
+
+/* Column class for a full-width (12/12) column (100% of the container) */
+.column-12 {
+  width: 100%;  /* Set the maximum width to 100% */
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="column-"] {
+    width: 100%;
+    padding: 1rem 2rem !important;
+  }
+
+  .menu, .menu-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-text {
+    padding: 0.5rem;
+  }
+
+  .about-text-right {
+    margin-right: 0 !important;
+    }
+    .about-text-left {
+      margin-left: 0 !important;
+  }
+  .page-header-text-style {
+    font-size: 1.5rem !important;
+    font-weight: 200 !important;
+    line-height: 1.2 !important;
+  }
+
+    .text-uppercase {
+      letter-spacing: 1px !important;
+    }
+      /* Targets the element with the ID 'testimonials' */
+    #testimonials { 
+      /* Sets the background color to white */
+      background-color: #fff; 
+      /* Adds padding of 40px on top and bottom, and 20px on left and right */
+      padding: 22px !important; 
+      /* Sets the width of the testimonials section to 900 pixels */
+      width: 100% !important; 
+      /* Adds a margin of 0 on top and bottom, 10% on the bottom, and 15% on the left */
+      margin: 0 !important; 
+      /* Centers the content alignment (not effective in this context) */
+      align-content: center; 
+      /* Adds a subtle shadow around the box */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+      /* Centers the text inside the testimonials section */
+      text-align: center; 
+    }
+    /* Style for h1 heading and elements with class "h1" */
+    h1, .h1 {
+      font-size: 2.2rem;  /* Set the font size to 2.8rem (responsive size based on root font size) */
+    }
+
+    /* Style for h2 heading and elements with class "h2" */
+    h2, .h2 {
+      font-size: 1.8rem;  /* Set the font size to 2.2rem */
+    }
+
+    /* Style for h4 heading and elements with class "h4" */
+    h4, .h4 {
+      font-size: 1rem;  /* Set the font size to 1.5rem */
+    }
+
+    /* Style for h5 heading and elements with class "h5" */
+    h5, .h5 {
+      font-size: 0.9rem;  /* Set the font size to 1.35rem */
+    }
+
+    /* Style for h6 heading and elements with class "h6" */
+    h6, .h6 {
+      font-size: 0.6rem;  /* Set the font size to 1rem */
+    }
+}
+
+
+/* Base style for form elements (e.g., input fields, text areas) */
+.form-style {
+  display: block;  /* Ensures the form element is rendered as a block-level element, taking up full width */
+  width: 100%;  /* Makes the form element span the full width of its container */
+  height: calc(1.5em + 0.75rem + 2px);  /* Calculates a dynamic height based on font size, padding, and border */
+  padding: 0.375rem 0.75rem;  /* Adds padding of 0.375rem on top/bottom and 0.75rem on left/right */
+  border: 1px solid #0e4c73;  /* Adds a 1px solid border with a blue color (#10569c) */
+}
+
+/* Base button style */
+.btn {
+  border: 1px solid transparent;  /* Creates a border that is transparent by default */
+  padding: 0.4rem 0.8rem;  /* Adds padding of 0.4rem on top/bottom and 0.8rem on left/right */
+  font-size: 1.2rem;  /* Sets the font size to 1.2rem */
+  border-radius: 0.5rem;  /* Rounds the corners of the button with a radius of 0.5rem */
+}
+
+/* Specific style for button1 */
+.button1 {
+  color: #fff;  /* Sets the text color to white (#fff) */
+  background-color: #052955;  /* Sets the background color to dark blue (#052955) */
+  border: 3px solid #0e4c73;  /* Adds a 3px solid border with a light blue color (#11daf4) */
+}
+
+/* Hover and focus states for button1 */
+.button1:hover, .button1:focus {
+  color: #ffffff;  /* Changes the text color to dark blue (#052955) when hovered or focused */
+  background-color: #0e4c73;  /* Changes the background color to a lighter blue (#3bacf1) */
+  border: 3px solid #052955;  /* Changes the border to dark blue (#052955) */
+}
+
+/* Specific style for button2 */
+.button2 {
+  color: #052955;  /* Sets the text color to dark blue (#052955) */
+  background-color: #ffffff;  /* Sets the background color to light blue (#3bacf1) */
+  border: 3px solid #052955;  /* Adds a 3px solid border with dark blue (#052955) */
+  margin: 0.4rem;  /* Adds margin of 0.4rem around the button */
+}
+
+/* Hover state for button2 */
+.button2:hover {
+  color: #fff;  /* Changes the text color to white (#fff) when hovered */
+  background-color: #052955;  /* Changes the background color to dark blue (#052955) */
+  border: 3px solid #0e4c73;  /* Changes the border to light blue (#11daf4) */
+}
+
+/* Main menu container styling */
+.menu {
+  display: flex;  /* Aligns the menu items in a row using flexbox */
+  align-items: center;  /* Vertically centers the menu items */
+  justify-content: space-between;  /* Distributes space evenly between items, pushing them to the edges */
+  background-color: #FFFFFF !important;  /* Sets the background to white, with `!important` to override other styles */
+  box-shadow: 1rem 2rem 2rem rgb(37, 37, 37);
+}
+
+/* Container for the menu items inside the menu */
+.menu-body {
+  display: flex;  /* Aligns the menu body items in a row */
+}
+
+/* Styling for text inside the menu */
+.menu-text {
+  color: #052955;  /* Sets the text color to dark blue (#052955) */
+  padding: 1rem;  /* Adds padding of 1rem around the text */
+}
+
+/* Hover and focus states for menu text */
+.menu-text:hover, .menu-text:focus {
+  color: #054694;  /* Changes the text color to a lighter blue (#054694) on hover or focus */
+  font-weight: 600;  /* Makes the text bold (font-weight 600) */
+}
+
+/* Style for active menu text */
+.menu-text.active {
+  color: #054694;  /* Sets the text color to lighter blue when active */
+  font-weight: 600;  /* Makes the text bold when active */
+}
+
+/* Style for active footer text */
+.active-footer {
+  color: #f8f410;  /* Sets the text color to yellow (#f8f410) for active footer items */
+  font-weight: 600;  /* Makes the text bold for active footer items */
+}
+
+/* Submenu container */
+.submenu {
+  position: relative;  /* Positions the submenu relative to its parent container */
+}
+
+/* Submenu body, hidden by default */
+.submenu-body {
+  position: absolute;  /* Positions the submenu absolutely relative to the submenu container */
+  top: 100%;  /* Positions the submenu directly below the parent menu item */
+  z-index: 1000;  /* Ensures the submenu appears above other content */
+  display: none;  /* Initially hides the submenu */
+  padding: 0.6rem;  /* Adds padding of 0.6rem inside the submenu */
+  display: none;  /* Ensures the submenu is hidden by default */
+}
+
+/* Submenu items styling */
+.submenu-item {
+  display: block;  /* Ensures submenu items are displayed as block elements, stacking vertically */
+  padding: 0.25rem 1.5rem;  /* Adds padding of 0.25rem on top/bottom and 1.5rem on left/right */
+  color: #052955;  /* Sets the text color to dark blue (#052955) */
+  background-color: #f9fcf9;  /* Sets the background color to a light greenish white (#f9fcf9) */
+}
+
+/* Hover and focus states for submenu items */
+.submenu-item:hover, .submenu-item:focus {
+  color: #054694;  /* Changes the text color to lighter blue on hover/focus */
+  font-weight: 600;  /* Makes the text bold on hover/focus */
+  text-decoration: none;  /* Removes any text decoration (like underlining) */
+  background-color: #f9fcf9;  /* Keeps the background color consistent during hover/focus */
+}
+
+/* Active submenu item */
+.submenu-item.active {
+  color: #ffffff;  /* Sets the active item's text color to lighter blue */
+  font-weight: 600;  /* Makes the active item's text bold */
+  text-decoration: none;  /* Ensures no underline or other text decoration on active items */
+  background-color: #0e4c73;  /* Changes the background color to light blue for the active item */
+}
+
+/* Shows the submenu body when the 'show' class is added */
+.submenu-body.show {
+  display: block;  /* Makes the submenu visible when the 'show' class is applied */
+}
+
+/* Applies white text and a dark blue background to elements */
+.bg-blue {
+  color: #ffffff;  /* Sets text color to white (#ffffff) */
+  background-color: #052955 !important;  /* Sets the background color to dark blue (#052955), with !important to override other styles */
+}
+
+/* Applies a white background to elements */
+.bg-white {
+
+  background-color: #ffffff !important;  /* Sets the background color to white (#ffffff), with !important to ensure it overrides other styles */
+}
+
+/* Applies a darker blue background to elements */
+.bg-dark {
+  background-color: #0e4c73;  /* Sets the background color to a dark shade of blue (#0e4c73), with !important */
+}
+
+/* Adds a top border to an element */
+.border-top {
+  border-top: 1px solid #dee2e6 !important;  /* Adds a 1px solid top border with a light gray color (#dee2e6), with !important */
+}
+
+/* Sets a lower stacking order for elements */
+.z_index-1 {
+  z-index: -1;  /* Sets the element behind others in stacking context (z-index of -1) */
+}
+
+/* Applies bold font-weight */
+.font-weight {
+  font-weight: 600;  /* Sets the font weight to semi-bold (600) */
+}
+
+/* Displays elements as a flex container */
+.d-flex {
+  display: flex !important;  /* Sets the display property to flexbox, with !important to ensure priority */
+}
+
+/* Displays elements as inline-flex */
+.d-inline-flex {
+  display: inline-flex;  /* Sets the display property to inline-flex, making the element behave like an inline block with flexbox layout */
+}
+
+/* Sets the flex direction to column */
+.flex-column {
+  flex-direction: column !important;  /* Sets flex direction to column, stacking child elements vertically, with !important */
+}
+
+/* Aligns flex items to the start of the flex container */
+.justify-content-start {
+  justify-content: flex-start !important;  /* Aligns items to the left (or top in vertical layouts) with !important */
+}
+
+/* Centers flex items horizontally within the container */
+.justify-content-center {
+  justify-content: center !important;  /* Centers the flex items horizontally within the container, with !important */
+}
+
+/* Distributes space between items, leaving space between the first and last items */
+.justify-content-between {
+  justify-content: space-between !important;  /* Aligns the first item at the start, the last at the end, and distributes space between remaining items */
+}
+
+/* Hides overflow (anything that exceeds the container's boundaries) */
+.overflow-hidden {
+  overflow: hidden !important;  /* Hides any overflow (content that goes beyond the boundaries) with !important */
+}
+
+/* Sets the element's position relative to its normal position */
+.position-relative {
+  position: relative !important;  /* Positions the element relative to its normal position, with !important to override other styles */
+}
+
+/* Applies a shadow effect to the element */
+.shadow {
+  box-shadow: 0 0 0.8rem 0.7rem rgba(112, 111, 111, 0.5) !important;  /* Adds a shadow with an offset of 0, blur radius of 0.8rem, spread of 0.7rem, and a semi-transparent gray color */
+}
+
+/* Sets the element's width to 100% */
+.w-100 {
+  width: 100% !important;  /* Makes the element span the full width of its container */
+}
+
+/* Sets the element's height to 100% */
+.h-100 {
+  height: 100% !important;  /* Makes the element span the full height of its container */
+}
+
+/* Margin utility classes for spacing (1rem = 16px by default) */
+
+/* Adds a margin of 0.5rem (8px) on all sides */
+.m-1 { 
+  margin: 0.5rem !important;  /* Applies 0.5rem margin on all sides */
+}
+
+/* Adds a margin of 0.5rem to the top of the element */
+.mt-1 { 
+  margin-top: 0.5rem !important;  /* Applies 0.5rem margin to the top */
+}
+
+/* Adds a margin of 1rem (16px) on all sides */
+.m-2 { 
+  margin: 1rem !important;  /* Applies 1rem margin on all sides */
+}
+
+/* Adds a margin of 1rem to the bottom of the element */
+.mb-2 { 
+  margin-bottom: 1rem !important;  /* Applies 1rem margin to the bottom */
+}
+
+/* Adds a margin of 1rem to the right of the element */
+.mr-2 { 
+  margin-right: 1rem !important;  /* Applies 1rem margin to the right */
+}
+
+/* Adds a margin of 1.8rem (28.8px) on all sides */
+.m-3 { 
+  margin: 1.8rem !important;  /* Applies 1.8rem margin on all sides */
+}
+
+/* Adds a margin of 1.8rem to the top of the element */
+.mt-3 { 
+  margin-top: 1.8rem !important;  /* Applies 1.8rem margin to the top */
+}
+
+/* Adds a margin of 1.8rem to the bottom of the element */
+.mb-3 { 
+  margin-bottom: 1.8rem !important;  /* Applies 1.8rem margin to the bottom */
+}
+
+/* Adds a margin of 1.8rem to the left of the element */
+.ml-3 { 
+  margin-left: 1.8rem !important;  /* Applies 1.8rem margin to the left */
+}
+
+/* Adds a margin of 3rem (48px) to the top of the element */
+.mt-4 { 
+  margin-top: 3rem !important;  /* Applies 3rem margin to the top */
+}
+
+/* Adds a margin of 3rem to the bottom of the element */
+.mb-4 { 
+  margin-bottom: 3rem !important;  /* Applies 3rem margin to the bottom */
+}
+/* Padding utility classes for spacing (1rem = 16px by default) */
+
+/* Adds padding of 0.5rem (8px) on all sides */
+.p-1 { 
+  padding: 0.5rem !important;  /* Applies 0.5rem padding on all sides */
+}
+
+/* Adds padding of 0.5rem to the top of the element */
+.pt-1 { 
+  padding-top: 0.5rem !important;  /* Applies 0.5rem padding to the top */
+}
+
+/* Adds padding of 0.5rem to the right of the element */
+.pr-1 { 
+  padding-right: 0.5rem !important;  /* Applies 0.5rem padding to the right */
+}
+
+/* Adds padding of 1rem (16px) on all sides */
+.p-2 { 
+  padding: 1rem !important;  /* Applies 1rem padding on all sides */
+}
+
+/* Adds padding of 1rem to the top of the element */
+.pt-2 { 
+  padding-top: 1rem !important;  /* Applies 1rem padding to the top */
+}
+
+/* Adds padding of 1rem to the bottom of the element */
+.pb-2 { 
+  padding-bottom: 1rem !important;  /* Applies 1rem padding to the bottom */
+}
+
+/* Adds padding of 1.8rem (28.8px) on all sides */
+.p-3 { 
+  padding: 1.8rem !important;  /* Applies 1.8rem padding on all sides */
+}
+
+/* Adds padding of 1.8rem to the top of the element */
+.pt-3 { 
+  padding-top: 1.8rem !important;  /* Applies 1.8rem padding to the top */
+}
+
+/* Adds padding of 1.8rem to the bottom of the element */
+.pb-3 { 
+  padding-bottom: 1.8rem !important;  /* Applies 1.8rem padding to the bottom */
+}
+
+/* Adds padding of 3rem (48px) on all sides */
+.p-4 { 
+  padding: 3rem !important;  /* Applies 3rem padding on all sides */
+}
+
+/* Adds padding of 4rem to the top of the element */
+.pt-4 { 
+  padding-top: 4rem !important;  /* Applies 4rem padding to the top */
+}
+
+/* Adds padding of 3rem to the bottom of the element */
+.pb-4 { 
+  padding-bottom: 3rem !important;  /* Applies 3rem padding to the bottom */
+}
+
+/* Negative margin utility classes for specific directions */
+
+/* Adds negative margin of -3rem to the top (pushes the element upwards) */
+.mt-n2 { 
+  margin-top: -3rem !important;  /* Applies negative 3rem margin to the top, moving the element upward */
+}
+
+/* Adds negative margin of -1.5rem to the top (pushes the element upwards) */
+.mt-n1 { 
+  margin-top: -1.5rem !important;  /* Applies negative 1.5rem margin to the top */
+}
+
+/* Adds negative margin of -0.5rem to the bottom (pulls the element upwards) */
+.mb-n1 { 
+  margin-bottom: -0.5rem !important;  /* Applies negative 0.5rem margin to the bottom */
+}
+
+/* Adds negative margin of -1rem to the bottom (pulls the element upwards) */
+.mb-n2 { 
+  margin-bottom: -1rem !important;  /* Applies negative 1rem margin to the bottom */
+}
+/* Carousel inner container styles */
+.carousel-inner {
+  position: relative;  /* Sets the inner container as a relatively positioned element */
+  width: 100%;  /* Ensures the carousel inner container spans the full width of the parent */
+  overflow: hidden;  /* Hides any overflowing content outside the container */
+}
+
+/* Carousel item styling */
+.carousel-item {
+  position: relative;  /* Positions each carousel item relative to the parent */
+  display: none;  /* Hides the carousel item by default */
+  width: 100%;  /* Ensures the carousel item spans the full width */
+  margin-right: -100%;  /* Ensures items are positioned for a sliding effect */
+  transition: transform 0.6s ease-in-out;  /* Adds a smooth transition effect when the item moves */
+}
+
+/* Carousel item image styling */
+.carousel-item img {
+  width: 100%;  /* Ensures the image takes the full width of the carousel item */
+  display: block;  /* Forces the image to behave like a block-level element */
+  opacity: 0.7;  /* Makes the image slightly transparent (opacity set to 70%) */
+}
+
+/* Active carousel item */
+.carousel-item.active {
+  display: block;  /* Displays the currently active carousel item */
+}
+
+/* Overlay on the carousel item */
+.carousel-item {
+  background: rgba(2, 39, 61, 0.8);  /* Adds a semi-transparent dark blue overlay */
+  background-blend-mode: overlay;  /* Blends the background color on top of the image */
+  background-size: cover;  /* Ensures the background image or color covers the entire area */
+}
+
+/* Styling for the carousel caption */
+.carousel-caption {
+  position: absolute;  /* Positions the caption absolutely within the carousel item */
+  top: 50%;  /* Centers the caption vertically */
+  left: 50%;  /* Centers the caption horizontally */
+  transform: translate(-50%, -50%);  /* Ensures the caption is fully centered using a transform */
+  text-align: center;  /* Centers the text within the caption */
+}
+
+/* Styling for the heading elements inside the caption */
+.carousel-caption h3, .carousel-caption h4 {
+  color:  #ffffff;  /* Sets the text color to white */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);  /* Adds a black text shadow for better readability */
+}
+
+/* Specific font size for h3 inside the caption */
+.carousel-caption h3 {
+  font-size: 3rem;  /* Sets a large font size for the h3 element */
+}
+
+/* Carousel controls (prev/next buttons) */
+.carousel-control-prev, .carousel-control-next {
+  cursor: pointer;  /* Changes the cursor to a pointer when hovering */
+  position: absolute;  /* Positions the controls absolutely within the carousel */
+  top: 50%;  /* Vertically centers the controls */
+  padding: 10px 20px;  /* Adds padding to make the controls larger and easier to click */
+  color: #ffffff;  /* Sets the text/icon color */
+  background-color: #0e4c73;  /* Adds a light blue background to the controls */
+  border-radius: 0.6rem;  /* Rounds the corners of the controls */
+}
+
+/* Previous control styling (positioned on the left) */
+.carousel-control-prev {
+  left: 10px;  /* Positions the previous control 10px from the left edge */
+}
+
+/* Next control styling (positioned on the right) */
+.carousel-control-next {
+  right: 10px;  /* Positions the next control 10px from the right edge */
+}
+
+
+
+/* Styles for the page header */
+.page-header {
+  /* Sets a linear gradient overlay on top of a background image */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/package-4.jpg) no-repeat center center;  
+  /* Ensures the background image covers the entire area */
+  background-size: cover;  
+}
+
+/* Styles for the text within the page header */
+.page-header-text {
+  justify-content: center !important;  /* Centers items along the main axis */
+  align-items: center !important;  /* Centers items along the cross axis */
+  display: flex !important;  /* Makes the container a flexbox */
+  color: white;  /* Sets the text color to white */
+  flex-direction: column !important;  /* Aligns items in a column */
+}
+
+/* Styles for the text in the page header */
+.page-header-text-style {
+  font-size: 3.5rem;  /* Sets the font size to 3.5 rem */
+  font-weight: 300;  /* Sets the font weight to light */
+  line-height: 1.2;  /* Sets the line height for better spacing */
+  text-transform: uppercase;  /* Transforms text to uppercase */
+}
+
+/* Styles for the people input section */
+.people-input {
+  display: flex;  /* Makes the container a flexbox */
+  align-items: center;  /* Centers items vertically within the container */
+}
+
+/* Styles for buttons within the people input section */
+.people-input .btn {
+  cursor: pointer;  /* Changes the cursor to a pointer when hovering over buttons */
+}
+
+/* Styles for the input field in the people input section */
+.people-input input {
+  text-align: center;  /* Centers the text within the input field */
+}
+
+/* Utility class for centering text */
+.text-center {
+  text-align: center !important;  /* Centers the text within the element */
+}
+
+/* Utility class for transforming text to uppercase */
+.text-uppercase {
+  text-transform: uppercase !important;  /* Forces text to uppercase */
+  letter-spacing: 5px;  /* Adds space between letters */
+}
+
+/* Utility class for setting text color to white */
+.text-white {
+  color: #fff !important;  /* Sets the text color to white */
+}
+
+/* Utility class for setting a primary text color */
+.text-primary {
+  color: #052955 !important;  /* Sets the text color to a specific shade of blue */
+}
+
+/* Utility class for setting a custom text color */
+.text-color-copy {
+  color: yellow;  /* Sets the text color to a light blue */
+}
+
+/* Utility class for setting a dark text color */
+.text-dark {
+  color: #070707 !important;  /* Sets the text color to a very dark gray/black */
+}
+
+/* Styles for the filter section */
+.filter-section {
+    position: relative;  /* Positions the section relative to its normal position */
+    margin-top: -80px !important;  /* Moves the section upwards by 80 pixels */
+}
+/* Styles for the left-aligned about text */
+.about-text-left {
+  margin-left: -150px;  /* Moves the element 150 pixels to the left from its original position */
+  border-radius: 2rem;  /* Rounds the corners of the element with a radius of 2rem */
+  box-shadow: 0 0 2rem #0e4c73;  /* Adds a blue shadow effect around the element */
+}
+
+/* Styles for the right-aligned about text */
+.about-text-right {
+margin-right: -150px;  /* Moves the element 150 pixels to the right from its original position */
+z-index: 100;  /* Sets the stacking order of the element to be above others with lower z-index values */
+border-radius: 2rem;  /* Rounds the corners of the element with a radius of 2rem */
+box-shadow: 0 0 2rem #0e4c73;  /* Adds a blue shadow effect around the element */
+}
+
+/* Styles for images with specific border effects */
+.imgborder {
+/* Rounds the corners of the image */
+border-radius: 30px 1px 0 0;  /* Rounds the top left and top right corners, with specific values */
+border: 2px solid;  /* Sets a solid border of 2 pixels */
+/* Applies different colors to the border sides */
+border-color: transparent rgba(112, 111, 111) transparent transparent;  /* Top transparent, right gray, bottom transparent, left transparent */
+}
+
+/* Styles for team member shadow effect */
+.shadow-team {
+/* Rounds the corners of the shadow effect */
+border-radius: 0px 0px 30px 1px;  /* Rounds the bottom corners */
+box-shadow: 0 0 0.5rem 0.5rem rgba(112, 111, 111, 0.5);  /* Adds a shadow effect with slight offset */
+}
+
+/* Transition effect for images in destination items */
+.destination-item img {
+transition: .5s;  /* Smoothly transitions any changes in styles over 0.5 seconds */
+}
+
+/* Scale effect on image hover */
+.destination-item:hover img {
+transform: scale(1.3);  /* Enlarges the image to 1.3 times its original size when hovered over */
+}
+
+/* Styles for the overlay on destination items */
+.destination-overlay {
+position: absolute;  /* Positions the overlay absolutely within the nearest positioned ancestor */
+top: 30px;  /* Positions the overlay 30 pixels from the top */
+right: 30px;  /* Positions the overlay 30 pixels from the right */
+bottom: 30px;  /* Positions the overlay 30 pixels from the bottom */
+left: 30px;  /* Positions the overlay 30 pixels from the left */
+display: flex;  /* Enables flexbox layout */
+flex-direction: column;  /* Arranges child elements in a column */
+align-items: center;  /* Centers child elements horizontally */
+background: rgba(0, 0, 0, 0.3);  /* Applies a semi-transparent black background */
+border: 1px solid rgba(255, 255, 255, 0.5);  /* Sets a semi-transparent white border */
+}
+
+/* Expands the overlay on hover */
+.destination-item:hover .destination-overlay {
+top: 0px;  /* Moves the overlay to cover the entire item */
+right: 0px;  /* Moves the overlay to cover the entire item */
+bottom: 0px;  /* Moves the overlay to cover the entire item */
+left: 0px;  /* Moves the overlay to cover the entire item */
+border-width: 30px;  /* Increases the border width to 30 pixels */
+}
+
+/* Styles for paragraphs within links in destination items */
+.destination-item > a > p {
+text-align: center;  /* Centers the text within the paragraph */
+color: burlywood;  /* Sets the text color to a light brown */
+-webkit-text-stroke: 1px rgb(213, 244, 10);  /* Applies a light green stroke to the text for enhanced visibility */
+}
+/* Applies a shadow effect when hovering over elements with the .action-hover class */
+.action-hover:hover {
+  box-shadow: 0 0 3rem #575656;  /* Adds a shadow with a radius of 3rem and color #575656 */
+}
+
+/* Applies a shadow effect when hovering over elements with the .plans-styles class */
+.plans-styles:hover {
+  box-shadow: 0 0 3rem #575656;  /* Adds a shadow with a radius of 3rem and color #575656 */
+}
+
+/* Applies a shadow effect when hovering over elements with the .package-item class */
+.package-item:hover {
+  box-shadow: 0 0 3rem #575656;  /* Adds a shadow with a radius of 3rem and color #575656 */
+}
+
+/* Styles the background for the registration section with an overlay and image */
+.bg-img-registration {
+  background: linear-gradient(rgba(39, 38, 38, 0.5), rgba(39, 38, 38, 0.5)), url(../img/destination-4.jpg), no-repeat center center;  
+  /* Creates a linear gradient overlay on top of the background image */
+  background-size: cover;  /* Ensures the background image covers the entire area */
+}
+
+/* Styles for blog items with a transition effect */
+.blog-item {
+  transition: .5s;  /* Smoothly transitions any changes in styles over 0.5 seconds */
+}
+
+/* Applies a shadow effect when hovering over blog items */
+.blog-item:hover {
+    box-shadow: 0 0 3rem #575656;  /* Adds a shadow with a radius of 3rem and color #575656 */
+}
+
+/* Styles for the date section in blog items */
+.blog-date {
+  position: absolute;  /* Positions the date absolutely within the nearest positioned ancestor */
+  width: 140px;  /* Sets the width of the date container */
+  height: 100px;  /* Sets the height of the date container */
+  top: 150px;  /* Positions the top of the container 150 pixels from the top of its parent */
+  left: -15px;  /* Positions the left side of the container 15 pixels to the left */
+  display: flex;  /* Enables flexbox layout for the date container */
+  align-items: center;  /* Vertically centers child elements within the container */
+  justify-content: center;  /* Horizontally centers child elements within the container */
+  flex-direction: column;  /* Arranges child elements in a column */
+  color: #fff;  /* Sets the text color to white */
+  background: #052955;  /* Sets the background color to a dark blue */
+}
+
+/* Creates a triangular pointer for the date section */
+.blog-date::after {
+  position: absolute;  /* Positions the pseudo-element absolutely within the date container */
+  content: "";  /* Creates an empty content for the pseudo-element */
+  width: 0;  /* Sets the width to 0 to create a triangle */
+  height: 0;  /* Sets the height to 0 to create a triangle */
+  top: -15px;  /* Positions the top of the triangle 15 pixels above the date container */
+  left: 0;  /* Positions the left side of the triangle to align with the left edge of the container */
+  border: 8px solid;  /* Creates a border around the triangle */
+  border-color: transparent #052955 #052955 transparent;  /* Colors the triangle, making it point downwards */
+  z-index: -1;  /* Places the triangle behind the date container */
+}
+
+/* Styles for the input box element */
+.input-box {
+  height: 40px;  /* Sets the height of the input box to 40 pixels */
+  width: 100px;  /* Sets the width of the input box to 100 pixels */
+  border: 1px solid #ddd;  /* Creates a light gray border around the input box */
+  display: flex;  /* Enables flexbox layout for the input box */
+  align-items: center;  /* Vertically centers its child elements */
+  justify-content: space-between;  /* Distributes space between child elements, aligning them at the start and end */
+}
+
+/* Styles for button elements */
+button {
+  background: transparent;  /* Sets the button's background to transparent */
+  border: 0;  /* Removes any default border from the button */
+  cursor: pointer;  /* Changes the cursor to a pointer when hovering over the button */
+  font-size: 15px;  /* Sets the font size of the button text to 15 pixels */
+  padding: 5px 10px;  /* Adds padding of 5 pixels on the top/bottom and 10 pixels on the left/right */
+}
+
+/**
+ * Turn Off Number Input Spinners
+ * This snippet removes the default up and down arrow spinners 
+ * from number input fields in WebKit browsers (like Chrome and Safari).
+ * Reference: https://css-tricks.com/snippets/css/turn-off-number-input-spinners/#:~:text=WebKit%20desktop%20browsers%20add%20little%20up%20down%20arrows,input%5Btype%3Dnumber%5D%3A%3A-webkit-inner-spin-button%2C%20input%5Btype%3Dnumber%5D%3A%3A-webkit-outer-spin-button%20%7B%20-webkit-appearance%3A%20none%3B%20margin%3A%200%3B%20%7D
+ * This is for the form in home page located on the form filter.
+ */
+
+/* Targeting the inner spin buttons of number input fields */
+input[type=number]::-webkit-inner-spin-button, 
+/* Targeting the outer spin buttons of number input fields */
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;  /* Removes the default styling (appearance) of the spin buttons */
+  margin: 0;  /* Resets any default margin applied to the spin buttons */
+}
+
+
+
+
+
+/* Targets the element with the ID 'testimonials' */
+#testimonials { 
+  /* Sets the background color to white */
+  background-color: #fff; 
+  /* Adds padding of 40px on top and bottom, and 20px on left and right */
+  padding: 40px 20px; 
+  /* Sets the width of the testimonials section to 900 pixels */
+  width: 900px; 
+  /* Adds a margin of 0 on top and bottom, 10% on the bottom, and 15% on the left */
+  margin: 0 0 10% 15%; 
+  /* Centers the content alignment (not effective in this context) */
+  align-content: center; 
+  /* Adds a subtle shadow around the box */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  /* Centers the text inside the testimonials section */
+  text-align: center; 
+}
+
+.testimonial-container { /* Targets the container for the testimonials */
+  display: flex; /* Uses flexbox layout for arranging child elements */
+  overflow: hidden; /* Hides any overflow content that exceeds the container's bounds */
+  position: relative; /* Sets the position to relative for positioning child elements */
+  justify-content: center; /* Centers child elements horizontally */
+  height: 250px; /* Sets the height of the container to 250 pixels */
+}
+
+.testimonial { /* Targets each individual testimonial */
+  min-width: 100%; /* Ensures each testimonial takes up at least 100% of the container width */
+  transition: transform 0.5s ease; /* Adds a smooth transition effect for transformations over 0.5 seconds */
+  display: flex; /* Uses flexbox layout for arranging content within the testimonial */
+  align-items: center; /* Centers child elements vertically */
+  justify-content: center; /* Centers child elements horizontally */
+  text-align: left; /* Aligns text to the left */
+}
+
+.customer-photo img { /* Targets the image within the customer photo section */
+  width: 80px; /* Sets the width of the image to 80 pixels */
+  height: 80px; /* Sets the height of the image to 80 pixels */
+  border-radius: 50%; /* Makes the image circular by setting the border radius to 50% */
+  margin-right: 20px; /* Adds a margin of 20 pixels to the right of the image */
+}
+
+.testimonial-content { /* Targets the content section of each testimonial */
+  max-width: 600px; /* Sets a maximum width of 600 pixels for the content */
+}
+
+.testimonial-content p { /* Targets paragraph elements within the testimonial content */
+  font-size: 18px; /* Sets the font size to 18 pixels */
+  line-height: 1.6; /* Sets the line height to 1.6 for better readability */
+  color: #555; /* Sets the text color to a dark gray */
+  margin-bottom: 10px; /* Adds a margin of 10 pixels below the paragraph */
+}
+
+.rating { /* Targets the element displaying the rating */
+  color: #FFD700; /* Sets the text color to gold for the stars */
+  font-size: 20px; /* Sets the font size to 20 pixels */
+}
+
+/* Navigation Buttons */
+.testimonial-navigation { /* Targets the navigation container for testimonials */
+  margin-top: 20px; /* Adds a margin of 20 pixels above the navigation section */
+}
+
+.testimonial-navigation button { /* Targets the buttons within the testimonial navigation */
+  background-color: #052955; /* Sets the button background color to dark blue */
+  color: white; /* Sets the text color to white */
+  border: none; /* Removes the default border from the button */
+  padding: 10px 20px; /* Adds padding of 10 pixels top and bottom, 20 pixels left and right */
+  font-size: 16px; /* Sets the font size to 16 pixels */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+  margin: 0 10px; /* Adds a margin of 10 pixels on the left and right of the button */
+  border-radius: 5px; /* Rounds the corners of the button with a 5-pixel radius */
+}
+
+.testimonial-navigation button:hover { /* Applies styles to buttons when hovered over */
+  background-color: #052955; /* Maintains the background color (no change on hover) */
+}
+
+
+
+/* Modal Styles for the form contact us, 
+it uses to display terms and conditions for the Agree section */
+.modal {
+  /* Hides the modal by default */
+  display: none;
+  /* Sets the modal to be fixed in position */
+  position: fixed;
+  /* Places the modal above other elements */
+  z-index: 1000;
+  /* Aligns the modal to the left side of the screen */
+  left: 0;
+  /* Aligns the modal to the top of the screen */
+  top: 0;
+  /* Sets the width of the modal to 100% of the viewport */
+  width: 100%;
+  /* Sets the height of the modal to 100% of the viewport */
+  height: 100%;
+  /* Allows scrolling if the modal content overflows */
+  overflow: auto;
+  /* Sets the background color with transparency */
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  /* Sets the background color of the modal content */
+  background-color: #fff;
+  /* Centers the modal content with a margin */
+  margin: 1% auto;
+  /* Adds padding inside the modal content */
+  padding: 20px;
+  /* Adds a border around the modal content */
+  border: 1px solid #888;
+  /* Sets the width of the modal content */
+  width: 80%;
+  /* Rounds the corners of the modal content */
+  border-radius: 8px;
+}
+
+.close-button {
+  /* Sets the text color of the close button */
+  color: #aaa;
+  /* Floats the close button to the right */
+  float: right;
+  /* Sets the font size of the close button */
+  font-size: 28px;
+  /* Makes the font weight bold */
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  /* Changes the color of the close button on hover or focus */
+  color: black;
+  /* Removes the underline from the close button */
+  text-decoration: none;
+  /* Changes the cursor to a pointer */
+  cursor: pointer;
+}

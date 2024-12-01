@@ -1,0 +1,262 @@
+<!-- This line declares the document type as HTML. 
+It's important for browsers to understand how to render the code. -->
+<!DOCTYPE html>
+    <!--This line opens the HTML element and specifies the 
+    language of the content as English.-->
+    <html lang="en">
+        <!-- This tag marks the beginning of the document's head section. 
+        This section contains information about the document that isn't directly displayed 
+        on the webpage itself. -->
+        <head>
+        <!--  This line defines the character encoding of the 
+        document as UTF-8. This allows the webpage to display characters from various languages correctly.-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- This line defines the title of the webpage as "Skyline Escapes". 
+            The title appears on the browser tab and is important for SEO. -->
+            <title>Skyline Escapes</title>
+ 
+            <!-- This line links to the favicon, which is the small icon displayed on the browser tab. 
+            It helps to visually identify the webpage. -->
+            <link href="img/favicon.ico" rel="icon">
+ 
+            <!-- This line includes the Font Awesome library, which provides access to various icons. 
+            The stylesheet is loaded from an external CDN (Content Delivery Network). -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+ 
+            <!-- This line links to an external CSS file (style.css) that defines the 
+            appearance and layout of the webpage. The file is located in the 'css' directory. -->
+            <link href="css/style.css" rel="stylesheet">
+        </head>
+ 
+<!--This tag marks start of the body section of the HTML document. 
+All the visible content of the webpage should be placed between the opening 
+<body> and this closing </body> tag.-->
+<body>
+    <!-- Menu Start -->
+    <!-- This is the main container for the navigation menu, 
+    positioned relative to the rest of the content with a z-index to control the stacking order. -->
+    <div class="wrapper position-relative mt-n1" style="z-index: 9;">
+        <div class="menu">
+            <!-- This is the logo area with a link to the homepage. 
+            When clicked, it redirects the user to "index.html". -->
+            <a href="index.html">
+                <!-- The website title is "SkylineEscapes", styled with a primary color for "Escapes" 
+                and a darker shade for "Skyline". The margin-left (ml-3) class adds spacing on the left. -->
+                <h1 class="ml-3 text-primary"><span class="text-dark">Skyline</span>Escapes</h1>
+            </a>
+ 
+        <!-- This div contains the menu items, styled with padding (p-2). -->
+        <div class="menu-body p-2">
+            <!-- This is the first menu link, which takes the user to the homepage. -->
+            <a href="index.html" class="menu-text">Home</a>
+ 
+            <!-- This link redirects to the "About" page. -->
+            <a href="about.html" class="menu-text">About</a>
+ 
+            <!-- Submenu section starts here, with a toggle to reveal additional pages. 
+            The submenu is controlled using data-toggle functionality. -->
+            <div class="menu-text submenu">
+                <!-- When clicked, this toggles the display of the submenu items. 
+                    The arrow (&#9660;) indicates a dropdown. -->
+                <a href="#" class="menu-text submenu-toggle" data-toggle="submenu">Pages Services &#9660;</a>
+ 
+                <!-- Submenu content starts here. Initially hidden, this section reveals when the user clicks the toggle. -->
+                <div class="submenu-body">
+                    <!-- First submenu item that links to the Services page. 
+                        The arrow (&#9654;) indicates a sub-item. -->
+                    <a href="service.html" class="submenu-item"> &#9654; Services</a>
+
+                    <!-- Second submenu item that links to a blog detail page. -->
+                    <a href="newssite.html" class="submenu-item"> &#9654; News Site</a>
+                </div>
+            </div>
+ 
+            <!-- This link redirects to the contact page, active by default. -->
+            <a href="contact.html" class="menu-text active">Contact</a>
+        </div>
+    </div>
+</div>
+<!-- Menu End -->
+
+        <!-- Header Start -->
+        <div class="w-100 page-header mt-n2 position-relative">
+            <!-- Flex container to center content vertically and horizontally -->
+            <div class="page-header-text" style="min-height: 400px">
+                <!-- Main heading for the About page -->
+                <h3 class="page-header-text-style">Send us a message!</h3>
+                <div class="d-inline-flex">
+                    <!-- Navigation links to Home and current page and to consider adding additional styles 
+                     for better visual, I separated using space after the word Home with the following code &nbsp; .-->
+                    <p class="m-0 text-uppercase"><a class="text-white" href="index.html">  &#9654; Home  &nbsp;&nbsp;</a></p>
+                    <!-- Current page label and the HTML entity &#9654; represents a right-pointing triangle symbol (▶). -->
+                    <p class="m-0 text-uppercase"> &#9654; Contact us</p>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+
+
+
+        <!-- Contact Us Form Start -->
+        <!-- Full-width container with padding for the contact section. -->
+        <div class="w-100 p-4">
+            <!-- Centered container for the section heading. -->
+            <div class="text-center mb-4">
+                <!-- Subheading indicating the category of the section. -->
+                <h6 class="text-primary text-uppercase">Contact</h6>
+                <!-- Main heading for the contact section, inviting users to reach out. -->
+                <h1>Contact Us For Any Query</h1>
+            </div>
+            <!-- Row to center the contact form on the page. -->
+            <div class="row justify-content-center">
+                <!-- Column for the form, taking up 8/12 of the width. -->
+                <div class="column-8">
+                    <div class="bg-white"> <!-- Background for the form section -->
+                        <!-- Contact form with an ID for JavaScript targeting. -->
+                        <form class="row" id="contact_form" action="/submit" method="POST">
+                            <div class="column-6">
+                                <label for="first_name">First Name:</label>
+                                <input type="text" id="first_name" name="first_name" class="form-style" placeholder="Name" required autocomplete="off">
+                            </div>
+                            <div class="column-6">
+                                <label for="last_name">Last Name:</label>
+                                <input type="text" id="last_name" name="last_name" class="form-style" placeholder="Surname" required autocomplete="off">
+                            </div>
+                            <div class="column-6">
+                                <label for="phone">Phone:</label>
+                                <input type="tel" id="phone" name="phone" class="form-style" placeholder="Phone Number (e.g., +123456789)" required autocomplete="off">
+                            </div>
+                            <div class="column-6">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" class="form-style" placeholder="Email" required autocomplete="off">
+                            </div>
+                            <div class="column-12">
+                                <label for="message">Message:</label>
+                                <textarea id="message" name="message" class="form-style h-100" rows="6" placeholder="Write your message here" required autocomplete="off"></textarea>
+                            </div>
+                            <div class="column-12">
+                                <input type="checkbox" id="terms">
+                                <label for="terms">I agree to the <a href="#" id="open-modal">terms and conditions</a>.</label>
+                            </div>
+                            <div class="column-12">
+                                <button class="btn button1" type="submit">Send Message</button>
+                            </div>
+                        </form>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Us Form End -->
+
+        <!-- Modal for Terms and Conditions -->
+        <div id="modal" class="modal"> <!-- Modal container -->
+            <div class="modal-content"> <!-- Content inside the modal -->
+                <span class="close-button" id="close-modal">&times;</span> <!-- Close button for the modal -->
+                <h3>Terms and Conditions</h3> <!-- Heading for the modal -->
+                <p>
+                    Please read the following terms and conditions carefully 
+                    before using our services...
+                    This privacy policy explains what personal data we collect from you 
+                    and why. We follow the EU General Data Protection Regulation (GDPR) 
+                    and the UK Data Protection Act 2018. Personal data is any information 
+                    that identifies you.
+                    Where you wish to make a booking, the personal data we need to 
+                    collect and process is likely to include;
+                </p>
+                <p>-Names of all persons travelling</p>
+                <p>-Contact details (such as telephone number, postal and e-mail addresses) of the 
+                    person making the booking</p>
+                <p>-Passport information of all persons travelling</p>
+                <p>-Travel insurance details for all persons travelling</p>
+                <p>-Dietary information where applicable</p>
+                <p>-Date of birth</p>
+                <p>-Emergency UK contact / next of kin details (names and telephone numbers) for all persons travelling</p>
+                <p>-Credit/ debit card or other payment information for the person making the booking.</p>
+                <h3>We may share your data with suppliers.</h3>
+                <p>Airlines
+                    Transport, Hotels and the providers of other forms of accommodation
+                <p>Tour managers and guides, Excursion and activity operators</p>
+                <p>Travel insurance providers</p>  
+                <p>Credit card companies / banks in respect of payments, Google - we work with third party company Google to automatically collect information</p>
+                <p>Your data is protected, and we only keep it for as long as necessary. 
+                You can withdraw your consent for marketing communications at any 
+                time. If your data is incorrect, you can request changes. You have 
+                the right to know what data we hold and can ask us to delete it in 
+                certain situations. We also use cookies on our website to improve 
+                your experience.
+                </p>
+                <p><a target="_blank" href="
+                    https://www.privacypolicies.com/blog/dpa-2018/#:~:text=The%20Data%20Protection%20Act%20of%202018%20is%20the,by%20the%20same%20privacy%20regulations%20as%20EU%20citizens.">
+                    Reference A Guide to the Data Protection Act 2018</a></p>
+                <p> <a target="_blank" href="https://europa.eu/youreurope/citizens/travel/entry-exit/non-eu-family/index_en.htm">
+                    reference to share information about passport
+                </a></p>
+                <p><a target="_blank" href="https://marketingplatform.google.com/about/analytics/terms/us/">
+                    Reference Terms and conditions Google
+                </a></p>
+                <!-- Add more terms and conditions here -->
+            </div>
+        </div>
+
+    <!-- Footer Start -->
+    <div class="w-100 bg-dark text-white p-1">
+        <div class="row">
+            <!-- First column for branding and social media links. -->
+            <div class="column-4">
+                <a href="">
+                    <!-- Brand name with primary color for emphasis. -->
+                    <h1 class="text-primary"><span class="text-white">TRAVEL</span>ER</h1>
+                </a>
+                <p>
+                    When you choose Grand European Travel, you gain access to the world's 
+                    top guided travel experiences and the best team to help you plan an unforgettable 
+                    adventure.
+                </p>
+                <h6 class="text-white text-uppercase">Follow Us</h6>
+                <div class="d-flex">
+                    <!-- Social media links with icons. -->
+                    <a class="btn button2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn button2" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn button2" href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <!-- Second column for navigation links to services. -->
+            <div class="column-4">
+                <h5 class="text-white">Our Services</h5>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white" href="index.html">&#9654; Home</a>
+					<a class="text-white" href="about.html">&#9654; About</a>
+					<a class="text-white" href="service.html">&#9654; Services</a>
+					<a class="text-white" href="newssite.html">&#9654; News Site</a>
+                </div>
+            </div>
+            <!-- Third column for contact information. -->
+            <div class="column-4">
+                <h5 class="text-white">Contact Us</h5>
+                <p><i class="fa fa-map-marker-alt"></i> 123 Street, Dublin, Ireland</p>
+                <p><i class="fa fa-phone-alt"></i> +353 123 123456</p>
+                <p><i class="fa fa-envelope"></i> info@example.com</p>
+                <a class="active-footer" href="contact.html">&#9654; Contact Us</a>
+            </div>
+        </div>
+        <!-- Divider for visual separation from the copyright section. -->
+        <div class="border-top">
+            <p class="text-white text-center">
+                Copyright &copy; <a class="text-color-copy" href="#"> All Rights Reserved.</a>
+            </p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- This line links to an external JavaScript file named main.js located in a folder named js.
+    This script typically contains the interactive features and functionalities for the webpage, 
+    such as event listeners, animations, menu drop sub-menu JavaScript code that enhances user experience. -->
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+
+</html>
